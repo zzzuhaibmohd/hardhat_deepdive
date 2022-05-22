@@ -1,0 +1,31 @@
+#create a fresh hardhat project
+mkdir project1
+cd project1
+npm init -y
+npm install --save-dev hardhat
+
+#creating a hardhat template
+npx hardhat
+
+#install dependencies
+npm install --save-dev @nomiclabs/hardhat-ethers ethers @nomiclabs/hardhat-waffle ethereum-waffle chai @nomiclabs/hardhat-etherscan @nomiclabs/hardhat-ethers ethers 
+npm install dotenv
+
+#execute the hardhat testcases
+npx hardhat test
+npx hardhat test test/token.js
+
+#compile the hardhat code
+npx hardhat compile
+
+#deploy the contract to specific network
+npx hardhat run deployments/deployToken.js --network rinkeby
+
+#verify the hardhat contract 
+npx hardhat verify --network rinkeby CONTRACT_ADDRESS constructor_args
+
+#running a local hardhat node
+npx hardhat node
+
+#deploy the smart contract on the local hardhat network
+npx hardhat run --network localhost deployments/deployHello.js
